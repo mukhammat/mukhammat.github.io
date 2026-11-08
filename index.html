@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mukhammat · AI-Powered Full-Stack Developer</title>
+<meta name="description" content="Mukhammat is an AI-powered full-stack developer in Medina, Saudi Arabia. SaaS products, AI assistants, Telegram bots, mobile apps and ERPNext.">
+<meta property="og:title" content="Mukhammat · AI-Powered Full-Stack Developer">
+<meta property="og:description" content="SaaS products, AI assistants, Telegram bots, mobile apps and ERPNext. Based in Medina, working remotely worldwide.">
+<meta property="og:image" content="assets/madinah-scribe.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E5A43'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-weight='700' font-size='17' fill='%23D9B45A'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --marble:#EEF1EE;   /* page */
+    --paper:#FFFFFF;    /* cards */
+    --ink:#10201A;      /* text */
+    --dome:#0E5A43;     /* primary green */
+    --dome-deep:#093D2E;
+    --brass:#B88A2E;    /* accent */
+    --brass-soft:#D9B45A;
+    --muted:#5B6A63;
+    --line:#D3DBD6;
+    --display:"Reem Kufi", "IBM Plex Sans", sans-serif;
+    --body:"IBM Plex Sans", system-ui, sans-serif;
+    --mono:"IBM Plex Mono", ui-monospace, monospace;
+    --wrap:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--marble);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  img{display:block;max-width:100%}
+  :focus-visible{outline:3px solid var(--brass);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+
+  /* top bar */
+  .bar{position:sticky;top:0;z-index:10;background:rgba(238,241,238,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .logo{font:700 20px/1 var(--display);text-decoration:none;color:var(--dome)}
+  .nav{display:flex;gap:28px;font-size:15px}
+  .nav a{text-decoration:none;color:var(--muted)}
+  .nav a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--body);text-decoration:none;padding:12px 18px;border-radius:999px;transition:background .2s,transform .2s}
+  .btn-dome{background:var(--dome);color:#fff}
+  .btn-dome:hover{background:var(--dome-deep)}
+  .btn-line{border:1.5px solid var(--ink);color:var(--ink)}
+  .btn-line:hover{background:var(--ink);color:var(--marble)}
+
+  /* hero */
+  .hero{padding:88px 0 72px}
+  .hero .wrap{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(300px,1fr);gap:56px;align-items:end}
+  .eyebrow{font:500 13px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brass)}
+  .name{font:700 clamp(44px,12.5vw,118px)/.9 var(--display);color:var(--dome);margin:20px 0 28px;letter-spacing:-.01em}
+  .name span{display:block;font-size:max(.42em,30px);color:var(--brass);margin-top:14px;direction:rtl;text-align:left;font-weight:500}
+  .lede{font-size:clamp(19px,2vw,22px);line-height:1.5;max-width:34ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+  /* the Medina clock */
+  .clock{background:var(--dome);color:#fff;border-radius:28px;padding:28px;position:relative;overflow:hidden}
+  .clock::after{content:"";position:absolute;inset:auto -60px -60px auto;width:220px;height:220px;border-radius:50%;border:1px solid rgba(217,180,90,.35);box-shadow:0 0 0 22px rgba(217,180,90,.06),0 0 0 44px rgba(217,180,90,.04)}
+  .clock-label{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brass-soft)}
+  .clock-time{font:500 clamp(56px,7vw,76px)/1 var(--mono);margin:16px 0 6px;font-variant-numeric:tabular-nums}
+  .clock-date{color:rgba(255,255,255,.75);font-size:15px}
+  .clock-status{display:flex;align-items:center;gap:10px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);font-size:15px;position:relative;z-index:1}
+  .dot{width:10px;height:10px;border-radius:50%;background:var(--brass-soft);flex:none}
+  .dot.on{background:#5FD39A;box-shadow:0 0 0 4px rgba(95,211,154,.2)}
+  .clock-yours{font:400 13px/1.4 var(--mono);color:rgba(255,255,255,.6);margin-top:8px;position:relative;z-index:1}
+
+  /* sections */
+  section{padding:72px 0}
+  .head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+  h2{font:700 clamp(32px,4vw,44px)/1.05 var(--display);color:var(--ink)}
+  .head p{color:var(--muted);max-width:44ch}
+
+  /* products shelf */
+  .shelf{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+  .product{text-decoration:none;display:flex;flex-direction:column;gap:14px}
+  .phone{background:var(--ink);border-radius:30px;padding:7px;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+  .phone img{border-radius:24px;aspect-ratio:9/17.5;object-fit:cover;object-position:top;width:100%}
+  .product:hover .phone{transform:translateY(-8px);box-shadow:0 22px 40px -18px rgba(14,90,67,.55)}
+  .product h3{font:700 19px/1.2 var(--display)}
+  .product p{font-size:14.5px;line-height:1.5;color:var(--muted)}
+  .tag{font:500 11.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--brass)}
+  .product .go{font:500 13px/1 var(--mono);color:var(--dome);margin-top:auto}
+
+  /* services */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+  .svc{background:var(--paper);padding:26px}
+  .svc h3{font:700 19px/1.25 var(--display);color:var(--dome);margin-bottom:8px}
+  .svc p{font-size:15px;color:var(--muted)}
+
+  /* experience */
+  .xp{border-top:1px solid var(--line)}
+  .job{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line)}
+  .when{font:500 14px/1.6 var(--mono);color:var(--brass)}
+  .job h3{font:600 19px/1.35 var(--body)}
+  .job h3 em{font-style:normal;color:var(--muted);font-weight:400}
+  .job p{color:var(--muted);margin-top:6px;font-size:15.5px;max-width:70ch}
+  .job a{color:var(--dome)}
+
+  /* stack */
+  .stack{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+  .stack h3{font:500 12.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-bottom:12px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:14.5px}
+
+  /* contact */
+  .contact{background:var(--dome-deep);color:#fff;border-radius:32px;padding:clamp(36px,6vw,72px);margin-bottom:40px}
+  .contact h2{color:#fff;font-size:clamp(36px,5.5vw,64px);max-width:16ch}
+  .contact p{color:rgba(255,255,255,.75);margin:18px 0 30px;max-width:48ch}
+  .contact .btn-line{border-color:rgba(255,255,255,.7);color:#fff}
+  .contact .btn-line:hover{background:#fff;color:var(--dome-deep)}
+  .btn-brass{background:var(--brass-soft);color:var(--ink)}
+  .btn-brass:hover{background:#E6C676}
+  .langs{margin-top:34px;font:400 14px/1.6 var(--mono);color:rgba(255,255,255,.6)}
+
+  footer{padding:0 0 40px;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+  /* load sequence */
+  .rise{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.8,.2,1) forwards}
+  .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.4s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .rise{animation:none;opacity:1;transform:none}
+    .phone,.btn{transition:none}
+  }
+
+  @media (max-width:980px){
+    .hero .wrap{grid-template-columns:1fr;gap:40px}
+    .shelf{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:24px;padding-bottom:12px;margin:0 -24px;padding-left:24px;padding-right:24px}
+    .product{flex:0 0 210px;scroll-snap-align:start}
+    .services,.stack{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:640px){
+    body{font-size:16px}
+    .wrap{padding:0 16px}
+    .shelf{margin:0 -16px;padding-left:16px;padding-right:16px;scroll-padding-left:16px}
+    .nav{display:none}
+    .hero{padding:52px 0 40px}
+    section{padding:52px 0}
+    .job{grid-template-columns:1fr;gap:6px}
+    .bar .btn{padding:10px 14px}
+    .services,.stack{grid-template-columns:1fr}
+    .long{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#top">Mukhammat</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#products">Products</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#stack">Stack</a>
+    </nav>
+    <a class="btn btn-dome" href="https://t.me/abo_saarah"><span class="long">Message on</span> Telegram</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow rise d1">AI-powered full-stack developer</p>
+        <h1 class="name rise d2">Mukhammat<span lang="ar">محمد</span></h1>
+        <p class="lede rise d3">I build SaaS products, AI assistants, Telegram bots and mobile apps from idea to launch. Backend at the core since 2016, full stack with AI today.</p>
+        <div class="hero-cta rise d4">
+          <a class="btn btn-dome" href="#products">See what I've shipped</a>
+          <a class="btn btn-line" href="mailto:dosnet2200@gmail.com">Email me</a>
+        </div>
+      </div>
+
+      <aside class="clock rise d4" aria-label="Local time in Medina">
+        <p class="clock-label">Local time · Medina, Saudi Arabia</p>
+        <p class="clock-time" id="time">--:--</p>
+        <p class="clock-date" id="date">UTC+3</p>
+        <p class="clock-status"><span class="dot" id="dot"></span><span id="status">Working remotely worldwide</span></p>
+        <p class="clock-yours" id="yours"></p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="wrap">
+      <div class="head">
+        <h2>Live products</h2>
+        <p>Products I built and launched, my own and for clients. Tap any of them to open it.</p>
+      </div>
+      <div class="shelf">
+        <a class="product" href="https://madinahscribe.net">
+          <div class="phone"><img src="assets/madinah-scribe.jpg" alt="Madinah Scribe home screen with coin balance and new recording options" loading="lazy"></div>
+          <span class="tag">Own product · 2026</span>
+          <h3>Madinah Scribe</h3>
+          <p>AI transcription: upload a file, paste a link or record live and get the text.</p>
+          <span class="go">madinahscribe.net ↗</span>
+        </a>
+        <a class="product" href="https://cafe.habibi-erp.com">
+          <div class="phone"><img src="assets/cafe-habibi.jpg" alt="Cafe Habibi AI assistant taking a burger order in chat" loading="lazy"></div>
+          <span class="tag">Own product · 2026</span>
+          <h3>Cafe Habibi</h3>
+          <p>AI assistant that takes restaurant orders in chat and sends them to staff.</p>
+          <span class="go">cafe.habibi-erp.com ↗</span>
+        </a>
+        <a class="product" href="https://realty-saas.dosnet2200.workers.dev">
+          <div class="phone"><img src="assets/realty-saas.jpg" alt="Realty SaaS dashboard with bookings, occupancy and income" loading="lazy"></div>
+          <span class="tag">SaaS · 2026</span>
+          <h3>Realty SaaS</h3>
+          <p>Short-term rental management: bookings, finances, AI assistant and Telegram bot.</p>
+          <span class="go">Open demo ↗</span>
+        </a>
+        <a class="product" href="https://play.google.com/store/apps/details?id=com.muslimstory.app">
+          <div class="phone"><img src="assets/muslim-kids-stories.jpg" alt="Muslim Kids Stories app home screen with age filters and continue listening" loading="lazy"></div>
+          <span class="tag">Android app · 2026</span>
+          <h3>Muslim Kids Stories</h3>
+          <p>Audio stories for kids with age filters, a library and "continue listening".</p>
+          <span class="go">Google Play ↗</span>
+        </a>
+        <a class="product" href="https://ivpeptide.com">
+          <div class="phone"><img src="assets/ivpeptide.jpg" alt="IVPEPTIDE online store home screen" loading="lazy"></div>
+          <span class="tag">Client project · 2026</span>
+          <h3>IVPEPTIDE &amp; Nadeck</h3>
+          <p>Online stores for peptides with a cart, accounts and a chat assistant.</p>
+          <span class="go">ivpeptide.com ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <h2>What I can build for you</h2>
+        <p>One developer from database to app store. I handle the backend, frontend, deployment and support.</p>
+      </div>
+      <div class="services">
+        <div class="svc"><h3>AI assistants</h3><p>Chatbots that take orders, answer customers and book appointments for your business.</p></div>
+        <div class="svc"><h3>SaaS &amp; MVPs</h3><p>From idea to a launched product with payments, an admin panel and analytics.</p></div>
+        <div class="svc"><h3>Telegram bots</h3><p>Sales, bookings, notifications and CRM integrations inside Telegram.</p></div>
+        <div class="svc"><h3>Online stores</h3><p>Catalogs, carts and payments, hosted fast and cheap on Cloudflare.</p></div>
+        <div class="svc"><h3>CRM &amp; ERP</h3><p>Custom CRMs, plus ERPNext setup and customization for how your business works.</p></div>
+        <div class="svc"><h3>Mobile apps</h3><p>Android and iOS apps with Capacitor or React Native, published to the stores.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="head">
+        <h2>Experience</h2>
+        <p>Ten years of writing code: from Java on SoloLearn to shipping my own AI products.</p>
+      </div>
+      <div class="xp">
+        <div class="job">
+          <p class="when">2025 – now</p>
+          <div>
+            <h3>AI-Powered Full-Stack Developer <em>· Freelance</em></h3>
+            <p>Own products Madinah Scribe and Cafe Habibi; Muslim Kids Stories; <a href="https://github.com/mukhammat/caravan">Caravan</a> booking platform with CRM; a <a href="https://github.com/mukhammat/crm_bakhodur">CRM system</a> with web and mobile apps; ERPNext customization for a burger restaurant; peptide stores.</p>
+          </div>
+        </div>
+        <div class="job">
+          <p class="when">2023 – 2025</p>
+          <div>
+            <h3>Backend Developer, Node.js <em>· Corinno</em></h3>
+            <p>Backend of a large freelance marketplace in a team of about 15 people.</p>
+          </div>
+        </div>
+        <div class="job">
+          <p class="when">2019</p>
+          <div>
+            <h3>Backend Developer, Laravel <em>· <a href="https://kitap.kz">Kitap.kz</a></em></h3>
+            <p>PHP / Laravel development in the company's backend team.</p>
+          </div>
+        </div>
+        <div class="job">
+          <p class="when">2018 – 2019</p>
+          <div>
+            <h3>Frontend &amp; PHP Developer <em>· Freelance</em></h3>
+            <p>Websites and landing pages for clients, then paid PHP tasks for a company.</p>
+          </div>
+        </div>
+        <div class="job">
+          <p class="when">2016 – 2023</p>
+          <div>
+            <h3>Education</h3>
+            <p>Started with Java in 2016. IT STEP Academy: C++, C# and ASP.NET. Studied in Medina, Saudi Arabia from 2019 to 2023.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="wrap">
+      <div class="head"><h2>Stack</h2></div>
+      <div class="stack">
+        <div><h3>Backend</h3><div class="chips"><span class="chip">Node.js</span><span class="chip">TypeScript</span><span class="chip">NestJS</span><span class="chip">Express</span><span class="chip">Hono</span><span class="chip">PHP / Laravel</span></div></div>
+        <div><h3>Frontend &amp; mobile</h3><div class="chips"><span class="chip">React</span><span class="chip">Vue</span><span class="chip">Angular</span><span class="chip">Capacitor</span><span class="chip">React Native</span></div></div>
+        <div><h3>Data &amp; cloud</h3><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">Drizzle</span><span class="chip">Redis</span><span class="chip">Supabase</span><span class="chip">Cloudflare Workers</span></div></div>
+        <div><h3>Also</h3><div class="chips"><span class="chip">ERPNext</span><span class="chip">Telegram bots</span><span class="chip">Docker</span><span class="chip">Nginx</span><span class="chip">Ubuntu</span><span class="chip">Claude Code</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <h2>Have a project in mind?</h2>
+        <p>Tell me what you want to build. I reply on Telegram fastest, and I'm open to both freelance projects and remote roles.</p>
+        <div class="hero-cta">
+          <a class="btn btn-brass" href="https://t.me/abo_saarah">Message @abo_saarah</a>
+          <a class="btn btn-line" href="mailto:dosnet2200@gmail.com">dosnet2200@gmail.com</a>
+          <a class="btn btn-line" href="https://github.com/mukhammat">GitHub</a>
+        </div>
+        <p class="langs">Russian · Arabic · English · Kazakh · Uzbek</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Mukhammat</span>
+    <span>Made in Medina</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var tz = "Asia/Riyadh";
+    var timeEl = document.getElementById("time");
+    var dateEl = document.getElementById("date");
+    var dot = document.getElementById("dot");
+    var statusEl = document.getElementById("status");
+    var yoursEl = document.getElementById("yours");
+    function tick() {
+      var now = new Date();
+      try {
+        timeEl.textContent = now.toLocaleTimeString("en-GB", { timeZone: tz, hour: "2-digit", minute: "2-digit" });
+        dateEl.textContent = now.toLocaleDateString("en-GB", { timeZone: tz, weekday: "long", day: "numeric", month: "long" }) + " · UTC+3";
+        var h = Number(now.toLocaleString("en-GB", { timeZone: tz, hour: "2-digit", hour12: false }));
+        var awake = h >= 9 && h < 23;
+        dot.className = "dot" + (awake ? " on" : "");
+        statusEl.textContent = awake ? "Working hours in Medina: a good time to write" : "Night in Medina: I'll reply in the morning";
+        var diff = -now.getTimezoneOffset() / 60 - 3;
+        yoursEl.textContent = diff === 0 ? "Same time zone as you" :
+          "Medina is " + Math.abs(diff) + (Math.abs(diff) === 1 ? " hour " : " hours ") + (diff > 0 ? "behind" : "ahead of") + " you";
+      } catch (e) {}
+    }
+    tick();
+    setInterval(tick, 20000);
+    document.getElementById("year").textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>
